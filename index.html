@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/weather.png">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+
+            <nav class="nav_bar">
+                <form action="" id="form__search">
+                    <input type="search" name="input-search" placeholder="Ciudad o país..." id="search" required
+                        autocomplete="off" title="Solo acepta letras y espacios en blanco"
+                        pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$">
+                    <input type="submit" value="Buscar" id="btn-search">
+                </form>
+
+                <a href="#history"><input type="button" value="Historial" class="history-btn"></a>
+            </nav>
+
+        </header>
+
+        <main>
+
+            <div class="loader">
+                <img src="./img/oval.svg" alt="loader">
+            </div>
+
+            <section class="container__weather">
+                <div class="error"></div>
+                <div class="date"></div>
+                <div class="clock"></div>
+                <div class="container__card"> </div>
+            </section>
+
+            <section class="container__history">
+                <h2 id="history"> historial </h2>
+                <input type="button" id="clear" class="hidden" value="Borrar Tabla">
+                <table id="tableHistory" class="hidden">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Temperatura</th>
+                            <th>Temp. Máxima</th>
+                            <th>Temp. Minima</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+                <div class="history__btn">
+                    <input type="button" value="Anterior" id="previus" class="hidden">
+                    <input type="button" value="Siguiente" id="next" class="hidden">
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="index.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
+
+</body>
+
+</html>

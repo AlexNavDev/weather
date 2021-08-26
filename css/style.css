@@ -1,0 +1,280 @@
+*,
+*::before,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1820px;
+  margin: auto;
+  font-family: "Merriweather", serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+input[type=button] {
+  width: 100px;
+  height: 25px;
+  font-weight: bold;
+}
+
+.header {
+  height: 150px;
+}
+.header .nav_bar {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.header .nav_bar #search {
+  height: 25px;
+  background-color: transparent;
+  color: white;
+  outline: none;
+}
+.header .nav_bar .span-error {
+  color: #ff3308;
+  text-align: center;
+  font-weight: bold;
+}
+.header .nav_bar #btn-search {
+  width: 80px;
+  height: 25px;
+  font-weight: bold;
+}
+.header .nav_bar .is-active {
+  display: block;
+  animation: show-message 0.5s 1 normal 0s ease-out both;
+}
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.loader {
+  width: 15%;
+  margin: auto;
+  text-align: center;
+}
+.loader img {
+  width: 100%;
+}
+
+.container__weather {
+  height: 100vh;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .container__weather {
+    width: 95%;
+    margin: auto;
+  }
+}
+.container__weather .error {
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+.container__weather .date {
+  height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 0;
+  background: rgba(255, 255, 255, 0.4);
+}
+.container__weather .date p {
+  color: #fff;
+  text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;
+}
+.container__weather .clock {
+  position: absolute;
+  width: 90px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  top: 225px;
+  left: 40%;
+  right: 40%;
+}
+@media (min-width: 576px) {
+  .container__weather .clock {
+    left: 43%;
+  }
+}
+@media (min-width: 768px) {
+  .container__weather .clock {
+    left: 45%;
+  }
+}
+@media (min-width: 1200px) {
+  .container__weather .clock {
+    left: 47%;
+  }
+}
+@media (min-width: 1400px) {
+  .container__weather .clock {
+    font-size: 1.5rem;
+    top: 300px;
+  }
+}
+.container__weather .card {
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+@media (min-width: 1400px) {
+  .container__weather .card {
+    height: 700px;
+    font-size: 1.5rem;
+  }
+  .container__weather .card > * {
+    margin-bottom: 100px;
+  }
+}
+.container__weather .card p {
+  line-height: 2;
+}
+.container__weather .card__header {
+  margin-top: 20px;
+}
+.container__weather .card__header h1,
+.container__weather .card__header h2 {
+  font-size: 2.3rem;
+}
+.container__weather .card__header h1 {
+  margin-bottom: 10px;
+}
+.container__weather .card__header h2 {
+  width: 30%;
+  margin: auto;
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 0.2em #fff, 0 0 0.2em #fff, 0 0 0.2em #fff;
+}
+@media (min-width: 587px) {
+  .container__weather .card__header h2 {
+    width: 20%;
+  }
+}
+@media (min-width: 1200px) {
+  .container__weather .card__header h2 {
+    width: 15%;
+  }
+}
+@media (min-width: 1400px) {
+  .container__weather .card__header h1 {
+    padding-top: 40px;
+  }
+}
+.container__weather .card__body .icon {
+  width: 130px;
+  margin: auto;
+  margin-top: -30px;
+}
+.container__weather .card__body .hour {
+  font-size: 2rem;
+}
+.container__weather .card__body .card__body-tmax {
+  width: 200px;
+  margin: auto;
+  display: inline;
+  color: #FF0000;
+}
+.container__weather .card__body .card__body-tmin {
+  width: 200px;
+  display: inline;
+  color: #618CFB;
+}
+@media (min-width: 576px) {
+  .container__weather .card__body p {
+    margin-bottom: 5px;
+  }
+  .container__weather .card__body .icon {
+    width: 130px;
+    height: 130px;
+  }
+}
+@media (min-width: 1400px) {
+  .container__weather .card__body p {
+    margin-bottom: 10px;
+  }
+  .container__weather .card__body .icon {
+    width: 150px;
+    height: 170px;
+    margin-top: -120px;
+  }
+}
+
+.container__history {
+  height: 100vh;
+}
+@media (min-width: 768px) {
+  .container__history {
+    width: 95%;
+    margin: auto;
+  }
+}
+.container__history h2 {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.container__history #clear {
+  margin-bottom: 20px;
+}
+.container__history #tableHistory {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.container__history #tableHistory th {
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid;
+  font-size: 0.9rem;
+}
+.container__history #tableHistory tbody tr:nth-child(odd) {
+  background-color: #BFC9CA;
+}
+.container__history #tableHistory tbody tr:nth-child(even) {
+  background-color: #EAECEE;
+}
+.container__history #tableHistory td {
+  height: 50px;
+}
+.container__history .history__btn {
+  width: 250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=style.css.map */
