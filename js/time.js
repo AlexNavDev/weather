@@ -36,12 +36,14 @@ export function weekday() {
   const date = new Date();
 
   let options = {
-      weekday: "long",
-      day: "2-digit",
-      month: "long"
-    },
+    weekday: "long",
+    day: "2-digit",
+    month: "long"
+  },
     now = date.toLocaleString("es-MX", options);
 
   $date.innerHTML = `<p>${now}</p>`
 
 }
+
+

@@ -42,10 +42,12 @@ export async function searchCity() {
 
     try {
       let city = e.target.search.value;
-      const apiSearch = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${keytwo}&lang=sp,es`;
+
+      const apiSearch = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${$key}`;
 
       let res = await fetch(apiSearch),
         weatherSearch = await res.json();
+      console.log(weatherSearch);
 
       if (weatherSearch.message === "city not found") {
         $weatherTemplate = `<h2 class="error"> No se encontro ${city}  </h2>`;
@@ -62,7 +64,7 @@ export async function searchCity() {
       tableHistory();
       $search.value = "";
       $search.focus();
-    } catch (error) {}
+    } catch (error) { }
   });
 }
 
@@ -94,42 +96,36 @@ function templaWeather(weatherData = weatherCityMexico) {
   $weatherTemplate = `
             <div class="card">   
                 <div class="hidden">
-                    ${
-                      weatherData.sys.country === "MX"
-                        ? `${weekday()}` && `${clock()}`
-                        : `${hiddenClock()}`
-                    }
+                    ${weatherData.sys.country === "MX"
+      ? `${weekday()}` && `${clock()}`
+      : `${hiddenClock()}`
+    }
                 </div> 
                             
                 <div class="card__header">
                     <h1> ${weatherData.name} </h1>               
                     <h2> ${Math.round(
-                      weatherData.main.temp
-                    )}°C</h2>                
+      weatherData.main.temp
+    )}°C</h2>                
                 </div>
                 
                 <div class="card__body">
                    <div class="icon">
-                    <img src="http://openweathermap.org/img/wn/${
-                      weatherData.weather[0].icon
-                    }@2x.png"
+                    <img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon
+    }@2x.png"
                     alt="icon_weather">
                    </div>
                        
-                    <p>Descripción: ${
-                      weatherData.weather[0].description
-                    }</p>             
-                    <p class="card__body-tmax"> ${
-                      weatherData.main.temp_max
-                    }°</p> / <p class="card__body-tmin">${
-    weatherData.main.temp_min
-  }°</p>  
+                    <p>Descripción: ${weatherData.weather[0].description
+    }</p>             
+                    <p class="card__body-tmax"> ${weatherData.main.temp_max
+    }°</p> / <p class="card__body-tmin">${weatherData.main.temp_min
+    }°</p>  
                 </div>   
 
                 <div class="card__footer">            
-                    <p>Humedad: ${
-                      weatherData.main.humidity
-                    }</p>                  
+                    <p>Humedad: ${weatherData.main.humidity
+    }</p>                  
                     <p>Latitud: ${weatherData.coord.lat}</p>
                     <p>Longitud: ${weatherData.coord.lon}</p>                   
 
